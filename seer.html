@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noble Finances - Your Financial Journey</title>
+    
+    <style>
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+        .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    /* color: #1A3317; */
+    font-size: 0.9rem;
+}
+
+/* Button Styling */
+.btn-dark {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px; 
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+
+
+        body {
+            font-family: 'Inter', sans-serif;
+            /* color: #2d3e30; */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+    
+
+        .logo {
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
+        }
+
+      
+        .btn-appointment {
+            background-color: #2d3e30;
+            color: white !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: opacity 0.3s;
+            
+        }
+
+      /* Hero Section */
+.hero {
+    display: flex;
+    padding: 5rem 5%;
+    align-items: center;
+    min-height: 60vh;
+    background-color: #ffffff;
+    gap: 2rem;
+
+    /* Smooth entry animation */
+}
+
+/* Content animation */
+.hero-content {
+    flex: 1;
+    animation: slideLeft 1s ease-in-out;
+}
+
+.hero-content h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    color: #2d3e30;
+
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hero-content h1:hover {
+    transform: translateY(-5px);
+    color: #1f2e22;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    max-width: 450px;
+
+    transition: all 0.3s ease;
+}
+
+.hero-content p:hover {
+    transform: translateX(5px);
+    color: #333;
+}
+
+/* Button hover */
+.btn-primary {
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9rem;
+
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    /* background-color: #1f2e22; */
+    transform: scale(1.05);
+}
+
+/* Image hover */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    animation: slideRight 1s ease-in-out;
+}
+
+.hero-image img {
+    transition: transform 0.4s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+        /* Representative 3D illustration container */
+        .illustration-box {
+            width: 100%;
+            max-width: 560px;
+            aspect-ratio: 560 / 445;
+            background: linear-gradient(135deg, #e0ffe9 0%, #ffffff 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            /* In a real scenario, you'd use the 3D asset here */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .placeholder-art {
+            text-align: center;
+            font-style: italic;
+            color: #888;
+        }
+
+        /* Bottom Image Section */
+        .cityscape {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .cityscape img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 3rem 5%;
+            }
+            .hero-content p {
+                margin: 0 auto 2rem auto;
+            }
+            .nav-links a:not(.btn-appointment) {
+                display: none;
+            }
+        }
+
+
+         /* Encabezado */
+        .header-section {
+            margin-bottom: 60px;
+        }
+
+        .header-section h2 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .header-section p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Contenedor de Pasos */
+        .step-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .step-card {
+            display: flex;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 40px;
+            gap: 30px;
+        }
+
+        /* Número Grande */
+        .step-number {
+            font-size: 6rem;
+            font-weight: 300;
+            color: var(--dark-green);
+            min-width: 80px;
+            line-height: 1;
+        }
+
+        /* Contenido de Texto */
+        .step-content {
+            flex: 2;
+        }
+
+        .step-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .step-content p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            max-width: 350px;
+            line-height: 1.5;
+        }
+
+        /* Imagen del paso */
+        .step-image {
+            flex: 1.5;
+            background-color: var(--light-gray);
+            border-radius: 15px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .step-image img {
+            width: 80%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Responsivo para móviles */
+        @media (max-width: 768px) {
+            .step-card {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+            
+            .step-image {
+                width: 100%;
+                height: 250px;
+            }
+
+            .step-number {
+                font-size: 4rem;
+            }
+        }
+
+
+        /* Sección "We Believe" */
+        .philosophy-section {
+            padding: 80px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .philosophy-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            color: var(--text-gray);
+        }
+
+        .philosophy-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .belief-card {
+            background-color: var(--mint-bg);
+            border-radius: 20px;
+            padding: 40px 30px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .belief-card:hover {
+            transform: translateY(1.3px);
+        }
+
+        .card-number {
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            display: block;
+            font-weight: 600;
+        }
+
+        .belief-card p {
+            font-size: 1.1rem;
+            line-height: 3.5;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgb(133, 207, 133);
+        }
+
+        /* Sección "Say Goodbye" */
+        .cta-section {
+            display: flex;
+            align-items: center;
+            padding: 80px 5%;
+            background-color: #fcfcfc;
+            gap: 40px;
+        }
+
+        .cta-content {
+            flex: 1;
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .btn-green {
+            background-color: #2d3e30;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .btn-green:hover {
+            background-color: #3d5240;
+        }
+
+        .cta-image {
+            flex: 1;
+            background-color: #a7f3c0;
+            border-radius: 24px;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .cta-image img {
+            width: 50%; /* Ajustado para simular la calculadora de la imagen */
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .cta-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+            .cta-image {
+                width: 100%;
+                height: 300px;
+            }
+        }
+
+
+        
+
+        .footer {
+background: green;
+            padding: 60px 5% 0 5%;
+            
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 80px;
+background-color: green;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: -1px;
+background-color: green;
+        }
+
+        .footer-nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+background-color: green;
+        }
+
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+background-color: green;
+        }
+
+        .btn-footer-cta {
+background-color: green;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+
+        .footer-middle {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-bottom: 40px;
+background: green;
+        }
+
+        .footer-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+background-color: green;
+        }
+
+        .footer-info p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            max-width: 400px;
+background-color: green;
+        }
+
+        
+
+        .bottom-bar {
+            background-color: var(--bottom-bar);
+            height: 60px;
+            margin: 0 -5.3%; /* Para extenderse al borde total */
+background-color: green;
+        }
+
+        
+      
+    </style>
+</head>
+<body>
+
+
+    <header class="navbar">
+        <div class="logo">Noble Finances</div>
+        <nav class="nav-links">
+            <a href="figma.html">Services</a>
+            <button class="btn-dark"><a href="watch.html">Book an appointment</a></button>
+        </nav>
+    </header>
+
+    <nav>
+        <div class="nav-links">
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Your Financial<br>Journey, Clearly<br>Defined</h1>
+            <p>Trusted financial guidance for every stage of life and business since 1987</p>
+            <a href="#" class="btn-primary">Connect with our experts</a>
+        </div>
+        <div class="hero-image">
+            <div class="illustration-box">
+               <img src="img/laptop.jpg">
+            </div>
+        </div>
+    </header>
+
+    <section class="cityscape">
+        <img src="img/bul.jpg">
+    </section>
+    <br>
+    <br>
+
+
+   
+    
+</head>
+<body>
+
+    <header class="header-section">
+        <p>How it works</p>
+        <h2>A simple onboarding</h2>
+        <p>Serving individuals and small businesses since 1987</p>
+    </header>
+
+    <div class="step-container">
+        
+        <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h3>Our tax advisors<br>write you a plan</h3>
+                <p>Accurately prepare and file personal and business tax returns to maximize deductions and ensure compliance.</p>
+            </div>
+            <div class="step-image">
+                <img src="img/h (3).jpg" alt="Plan">
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h3>Onboard us to your<br>finances</h3>
+                <p>Offer expert guidance and representation to resolve tax audits and disputes with confidence.</p>
+            </div>
+            <div class="step-image">
+                <img src="img/h (1).png" alt="Finances">
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h3>We solve the rest</h3>
+                <p>Maintain organized financial records and provide clear reports to support business growth and financial health.</p>
+            </div>
+            <div class="step-image">
+                <img src="img/h (2).png" alt="Solution">
+            </div>
+        </div>
+
+    </div>
+    <br><br>
+
+
+    <section class="philosophy-section">
+        <div class="philosophy-label">Philosophy</div>
+        <h2>We believe:</h2>
+
+        <div class="belief-card">
+            <span class="card-number">01</span>
+            <p>In empowering individuals and small businesses with the knowledge and tools they need to achieve lasting financial confidence.</p>
+        </div>
+
+        <div class="belief-card">
+            <span class="card-number">02</span>
+            <p>That personalized, trusted guidance, built on decades of experience, is the foundation of a successful financial partnership.</p>
+        </div>
+
+        <div class="belief-card">
+            <span class="card-number">03</span>
+            <p>In simplifying complex financial matters, providing clear, actionable strategies that pave the way for your financial well-being.</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Say goodbye to<br>taxes of the past</h2>
+            <a href="#" class="btn-green">Connect with our experts</a>
+        </div>
+        <div class="cta-image">
+            <img src="img/cal.jpg" alt="Calculadora">
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-logo">Noble Finances</div>
+            <div class="footer-nav">
+                <a href="#">Services</a>
+                <a href="#" class="btn-footer-cta">Book An Appointment</a>
+            </div>
+        </div>
+
+        <div class="footer-middle">
+            <div class="footer-info">
+                <h4>Financial Clarity You Can Trust</h4>
+                <p>Trusted financial guidance for every stage of life and business since 1987</p>
+            </div>
+            <div class="copyright">
+                © 2025 All Rights Reserved
+            </div>
+        </div>
+
+        <div class="bottom-bar"></div>
+    </footer>
+
+</body>
+</html>
